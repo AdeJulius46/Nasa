@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "NASA Space Apps Challenge Ogbomoso",
   description:
-    "Bringing Global Innovation to Ogbomoso — a two-day local NASA Space Apps hackathon for software, AI, data, hardware, design, science and entrepreneurship talent.",
+    "Bringing Global Innovation to Ogbomoso, a two-day local NASA Space Apps hackathon for software, AI, data, hardware, design, science and entrepreneurship talent.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

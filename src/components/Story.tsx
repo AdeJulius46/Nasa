@@ -1,17 +1,13 @@
+import Reveal from "./Reveal";
+
 export default function Story() {
   return (
     <section className="bg-deep-blue py-24 text-white">
-      <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-[1fr_2px_2fr]">
-        <div>
-          <p className="text-sm font-bold uppercase tracking-widest text-accent">
-            The Story
-          </p>
-          <h2 className="mt-2 text-3xl font-black sm:text-4xl">
-            Why Ogbomoso, Why Now
-          </h2>
-        </div>
-        <div className="hidden bg-white/15 md:block" />
-        <div className="space-y-5 text-white/85 leading-relaxed">
+      <div className="mx-auto max-w-3xl px-6">
+        <Reveal>
+          <h2 className="text-3xl font-black sm:text-4xl">Why Ogbomoso, why now</h2>
+        </Reveal>
+        <Reveal delay={0.08} className="mt-6 space-y-5 text-white/80 leading-relaxed">
           <p>
             As students who have competed in hackathons across Nigerian
             universities and innovation communities, we repeatedly saw
@@ -25,11 +21,11 @@ export default function Story() {
             to travel to Lagos, Abuja or another institution before they can
             compete, collaborate and be seen globally.
           </p>
-          <p>
+          <p className="text-white">
             For us, this is also about giving back to the institution and
             community that helped shape us.
           </p>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

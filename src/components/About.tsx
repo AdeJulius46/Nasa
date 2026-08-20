@@ -1,29 +1,37 @@
+import Reveal from "./Reveal";
+
 const points = [
-  "The NASA International Space Apps Challenge is a global hackathon where innovators use NASA and partner space-agency open data to solve real-world challenges on Earth and in space.",
-  "Ogbomoso will host a focused two-day local challenge, bringing together software, AI, data, hardware, design, science and entrepreneurship talent.",
-  "The goal is simple: give local talent access to a global innovation platform without needing to leave their community to find the opportunity.",
+  "Use NASA and partner space-agency open data to solve real-world challenges, on Earth and in space.",
+  "A focused two-day local challenge for software, AI, data, hardware, design, science and entrepreneurship talent.",
+  "Global platform, local access, no need to leave Ogbomoso to compete on the world stage.",
 ];
 
 export default function About() {
   return (
     <section id="about" className="bg-navy py-24 text-white">
-      <div className="mx-auto max-w-6xl px-6">
-        <p className="text-sm font-bold uppercase tracking-widest text-accent">
-          About NASA Space Apps
-        </p>
-        <h2 className="mt-2 text-3xl font-black sm:text-4xl">
-          A Global Challenge, Built Locally
-        </h2>
-        <ul className="mt-10 grid gap-6 md:grid-cols-3">
+      <div className="mx-auto grid max-w-6xl gap-12 px-6 md:grid-cols-[0.9fr_1.1fr] md:items-start">
+        <Reveal>
+          <h2 className="text-3xl font-black leading-tight sm:text-4xl">
+            A global hackathon, built for Ogbomoso
+          </h2>
+          <p className="mt-5 max-w-md text-white/70 leading-relaxed">
+            The NASA International Space Apps Challenge is a global hackathon.
+            This year, it lands locally, giving LAUTECH and Ogbomoso talent
+            direct access without the trip to Lagos or Abuja.
+          </p>
+        </Reveal>
+        <div className="space-y-6">
           {points.map((p, i) => (
-            <li
-              key={i}
-              className="rounded-2xl border border-white/10 bg-white/5 p-6 text-white/85 leading-relaxed"
-            >
-              {p}
-            </li>
+            <Reveal key={p} delay={i * 0.08}>
+              <div className="flex gap-4 border-t border-white/10 pt-6">
+                <span className="text-2xl font-black text-accent">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <p className="text-white/80 leading-relaxed">{p}</p>
+              </div>
+            </Reveal>
           ))}
-        </ul>
+        </div>
       </div>
     </section>
   );

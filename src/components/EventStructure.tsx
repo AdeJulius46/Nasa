@@ -1,45 +1,56 @@
+import { Microphone, UsersThree, Wrench, Trophy } from "@phosphor-icons/react/dist/ssr";
+import Reveal from "./Reveal";
+
 const items = [
   {
+    icon: Microphone,
     title: "Keynote Speaker",
-    desc: "Industry leaders, researchers and invited guests will share insights on space technology, AI, innovation, entrepreneurship and the role of young Africans in solving global challenges.",
+    desc: "Industry leaders, researchers and invited guests share insights on space technology, AI, innovation and the role of young Africans in solving global challenges.",
   },
   {
+    icon: UsersThree,
     title: "Challenge Kick-off & Team Formation",
-    desc: "Participants explore the official NASA Space Apps challenges, identify problems aligned with their interests and form multidisciplinary teams to begin developing solutions.",
+    desc: "Participants explore the official NASA Space Apps challenges, identify problems aligned with their interests and form multidisciplinary teams.",
   },
   {
+    icon: Wrench,
     title: "Workshops & Mentorship",
-    desc: "Teams build their solutions across the two days, supported by technical workshops, mentors, researchers and industry professionals who provide practical guidance and expertise.",
+    desc: "Teams build their solutions across two days, supported by technical workshops, mentors, researchers and industry professionals.",
   },
   {
-    title: "Project Showcase, Awards & Global Pathway",
-    desc: "Teams pitch and demonstrate their solutions before a panel of judges. Outstanding projects receive local prizes and recognition, with eligible top projects progressing into the NASA Space Apps global judging process.",
+    icon: Trophy,
+    title: "Showcase, Awards & Global Pathway",
+    desc: "Teams pitch before a panel of judges. Outstanding projects receive local prizes, with eligible top projects progressing into NASA's global judging process.",
   },
 ];
 
 export default function EventStructure() {
   return (
-    <section id="schedule" className="bg-white py-24 text-navy">
-      <div className="mx-auto max-w-6xl px-6">
-        <p className="text-sm font-bold uppercase tracking-widest text-blue">
+    <section id="schedule" className="bg-navy py-24 text-white">
+      <div className="mx-auto max-w-4xl px-6">
+        <p className="text-sm font-bold uppercase tracking-widest text-accent">
           Two Days, Start to Finish
         </p>
-        <h2 className="mt-2 mb-12 text-3xl font-black sm:text-4xl">
-          Event Structure
-        </h2>
-        <div className="grid gap-6 md:grid-cols-2">
-          {items.map((item, i) => (
-            <div
-              key={item.title}
-              className="rounded-2xl border border-navy/10 bg-navy/[0.03] p-7"
-            >
-              <span className="text-xs font-bold tracking-widest text-blue">
-                STEP {i + 1}
-              </span>
-              <h3 className="mt-2 text-xl font-bold">{item.title}</h3>
-              <p className="mt-3 leading-relaxed text-navy/70">{item.desc}</p>
-            </div>
-          ))}
+        <Reveal>
+          <h2 className="mt-2 mb-14 text-3xl font-black sm:text-4xl">Event Structure</h2>
+        </Reveal>
+        <div className="relative">
+          <div className="absolute left-6 top-2 bottom-2 hidden w-px bg-white/10 sm:block" />
+          <div className="space-y-10">
+            {items.map((item, i) => (
+              <Reveal key={item.title} delay={i * 0.08}>
+                <div className="relative flex gap-6 sm:pl-0">
+                  <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-white/15 bg-deep-blue">
+                    <item.icon size={22} weight="duotone" className="text-accent" />
+                  </div>
+                  <div className="pt-1.5">
+                    <h3 className="text-xl font-bold">{item.title}</h3>
+                    <p className="mt-2 max-w-xl leading-relaxed text-white/70">{item.desc}</p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </div>
     </section>
