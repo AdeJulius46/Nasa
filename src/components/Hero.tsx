@@ -1,8 +1,15 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { motion, useReducedMotion } from "motion/react";
-import { Rocket } from "@phosphor-icons/react";
 import RegisterButton from "./RegisterButton";
+import SceneErrorBoundary from "./three/SceneErrorBoundary";
+import OrbitFallback from "./three/OrbitFallback";
+
+const AstronautScene = dynamic(() => import("./three/AstronautScene"), {
+  ssr: false,
+  loading: () => <OrbitFallback />,
+});
 
 export default function Hero() {
   const reduce = useReducedMotion();
@@ -13,10 +20,7 @@ export default function Hero() {
   });
 
   return (
-    <section
-      id="top"
-      className="relative overflow-hidden bg-navy"
-    >
+    <section id="top" className="relative overflow-hidden bg-navy">
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.15]"
         style={{
@@ -56,22 +60,11 @@ export default function Hero() {
 
         <motion.div
           {...rise(0.2)}
-          className="relative mx-auto hidden aspect-square w-full max-w-md items-center justify-center md:flex"
+          className="relative mx-auto hidden aspect-square w-full max-w-md md:block"
         >
-          <svg viewBox="0 0 400 400" className="h-full w-full" aria-hidden="true">
-            <circle cx="200" cy="200" r="190" stroke="rgba(255,255,255,0.08)" strokeWidth="1" fill="none" />
-            <ellipse cx="200" cy="200" rx="170" ry="80" stroke="rgba(255,255,255,0.14)" strokeWidth="1" fill="none" transform="rotate(-18 200 200)" />
-            <ellipse cx="200" cy="200" rx="140" ry="140" stroke="rgba(234,254,7,0.25)" strokeWidth="1.5" fill="none" />
-            <circle cx="200" cy="200" r="46" fill="#0b1f5c" stroke="#eafe07" strokeWidth="1.5" />
-            {[
-              [60, 90], [340, 120], [90, 320], [310, 300], [200, 40], [40, 220],
-            ].map(([cx, cy], i) => (
-              <circle key={i} cx={cx} cy={cy} r={i % 2 === 0 ? 2.5 : 1.6} fill="rgba(255,255,255,0.6)" />
-            ))}
-          </svg>
-          <div className="absolute flex h-24 w-24 items-center justify-center rounded-full bg-deep-blue">
-            <Rocket size={40} weight="fill" className="text-accent" />
-          </div>
+          <SceneErrorBoundary fallback={<OrbitFallback />}>
+            <AstronautScene />
+          </SceneErrorBoundary>
         </motion.div>
       </div>
     </section>

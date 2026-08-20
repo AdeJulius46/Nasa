@@ -1,5 +1,6 @@
 import Link from "next/link";
 import RegisterButton from "./RegisterButton";
+import { SpaceAppsLogo } from "./SpaceAppsLogo";
 
 const links = [
   { label: "About", href: "#about" },
@@ -12,12 +13,12 @@ const links = [
 export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-navy/90 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-2">
         <Link href="#top" className="flex items-center gap-2 text-white">
-          <span className="font-mono text-[11px] font-medium uppercase tracking-[0.15em] text-accent">
-            NASA
+          <SpaceAppsLogo className="text-white" />
+          <span className="hidden font-mono text-[10px] uppercase tracking-[0.15em] text-white/50 sm:inline">
+            Ogbomoso
           </span>
-          <span className="text-sm font-bold tracking-tight">SPACE APPS · OGBOMOSO</span>
         </Link>
         <nav className="hidden items-center gap-2 md:flex">
           {links.map((l) => (

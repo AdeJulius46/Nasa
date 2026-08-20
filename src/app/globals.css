@@ -8,6 +8,7 @@
   --blue: #0b3fae;
   --abyss: #02061a;
   --accent: #eafe07;
+  --space-red: #fc3d21;
 }
 
 @theme inline {
@@ -18,8 +19,10 @@
   --color-blue: var(--blue);
   --color-abyss: var(--abyss);
   --color-accent: var(--accent);
+  --color-space-red: var(--space-red);
   --font-sans: var(--font-display);
   --font-mono: var(--font-label);
+  --font-display: var(--font-display);
 }
 
 body {

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import RegisterButton from "./RegisterButton";
+import { SpaceAppsLogo } from "./SpaceAppsLogo";
 import { EVENT } from "@/lib/config";
 
 export default function Footer() {
@@ -12,7 +13,10 @@ export default function Footer() {
         </div>
         <RegisterButton size="lg" />
       </div>
-      <div className="mx-auto mt-12 flex max-w-6xl flex-wrap gap-x-6 gap-y-2 border-t border-white/10 px-6 pt-8 text-sm text-white/60">
+      <div className="mx-auto mt-12 flex max-w-6xl items-center justify-between border-t border-white/10 px-6 pt-8">
+        <SpaceAppsLogo className="text-white" />
+      </div>
+      <div className="mx-auto mt-6 flex max-w-6xl flex-wrap gap-x-6 gap-y-2 px-6 text-sm text-white/60">
         {EVENT.social.map((s) => (
           <Link
             key={s.label}
