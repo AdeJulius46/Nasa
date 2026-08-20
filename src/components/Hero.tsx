@@ -33,13 +33,13 @@ export default function Hero() {
         <div className="flex flex-col items-start">
           <motion.div
             {...rise(0)}
-            className="mb-7 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-accent"
+            className="mb-7 inline-flex max-w-full items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 font-mono text-[9px] font-medium uppercase tracking-[0.08em] text-accent sm:px-4 sm:text-[11px] sm:tracking-[0.14em]"
           >
-            NASA International Space Apps Challenge
+            <span className="truncate">NASA International Space Apps Challenge</span>
           </motion.div>
           <motion.h1
             {...rise(0.08)}
-            className="max-w-xl text-5xl font-bold leading-[0.95] tracking-tight text-white sm:text-6xl"
+            className="max-w-xl text-4xl font-bold leading-[0.95] tracking-tight text-white sm:text-5xl md:text-6xl"
           >
             Bringing Global Innovation to Ogbomoso
           </motion.h1>
@@ -60,7 +60,7 @@ export default function Hero() {
 
         <motion.div
           {...rise(0.2)}
-          className="relative mx-auto hidden aspect-[4/4] w-full max-w-lg md:block"
+          className="relative mx-auto aspect-[3/4] w-full max-w-[260px] sm:max-w-xs md:max-w-lg"
         >
           <SceneErrorBoundary fallback={<OrbitFallback />}>
             <AstronautScene />

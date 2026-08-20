@@ -1,6 +1,7 @@
 import Link from "next/link";
 import RegisterButton from "./RegisterButton";
 import { SpaceAppsLogo } from "./SpaceAppsLogo";
+import MobileNav from "./MobileNav";
 
 const links = [
   { label: "About", href: "#about" },
@@ -13,9 +14,11 @@ const links = [
 export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-navy/90 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-2">
-        <Link href="#top" className="flex items-center gap-2 text-white">
-          <SpaceAppsLogo className="text-white" />
+      <div className="relative mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2 sm:px-6">
+        <Link href="#top" className="flex shrink-0 items-center gap-2 text-white">
+          <div className="scale-[0.78] origin-left sm:scale-100">
+            <SpaceAppsLogo className="text-white" />
+          </div>
           <span className="hidden font-mono text-[10px] uppercase tracking-[0.15em] text-white/50 sm:inline">
             Ogbomoso
           </span>
@@ -31,7 +34,10 @@ export default function Header() {
             </a>
           ))}
         </nav>
-        <RegisterButton size="sm" />
+        <div className="flex shrink-0 items-center gap-2">
+          <MobileNav links={links} />
+          <RegisterButton size="sm" className="px-4 py-2 text-xs sm:px-5 sm:py-2.5 sm:text-sm" />
+        </div>
       </div>
     </header>
   );

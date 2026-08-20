@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Stars, Environment, Bounds } from "@react-three/drei";
 import { useReducedMotion } from "motion/react";
@@ -15,14 +15,30 @@ function LoadingPlaceholder() {
   );
 }
 
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    setIsMobile(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+
+  return isMobile;
+}
+
 export default function AstronautScene() {
   const reduce = !!useReducedMotion();
+  const isMobile = useIsMobile();
+  const lightweight = reduce || isMobile;
 
   return (
     <Canvas
       camera={{ position: [0, 0, 5], fov: 35 }}
-      dpr={[1, 1.5]}
-      gl={{ antialias: true, alpha: true }}
+      dpr={isMobile ? 1 : [1, 1.5]}
+      gl={{ antialias: !isMobile, alpha: true, powerPreference: "low-power" }}
     >
       <ambientLight intensity={0.5} />
       <directionalLight position={[3, 4, 2]} intensity={1.2} />
@@ -35,7 +51,7 @@ export default function AstronautScene() {
         <Stars
           radius={40}
           depth={20}
-          count={reduce ? 200 : 1200}
+          count={lightweight ? 250 : 1200}
           factor={2.4}
           saturation={0}
           fade

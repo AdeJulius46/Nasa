@@ -67,7 +67,7 @@ export default function Sponsorship() {
           Help bring a global innovation platform to Ogbomoso. Choose the
           tier that fits your organization.
         </p>
-        <div className="grid gap-6 lg:grid-cols-4">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {tiers.map((t, i) => (
             <Reveal key={t.name} delay={i * 0.06}>
               <div
