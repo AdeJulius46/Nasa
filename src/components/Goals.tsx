@@ -29,14 +29,14 @@ export default function Goals() {
     <section id="goals" className="bg-navy py-24 text-white">
       <div className="mx-auto max-w-6xl px-6">
         <Reveal>
-          <h2 className="mb-12 max-w-lg text-3xl font-black leading-tight sm:text-4xl">
+          <h2 className="mb-12 max-w-lg text-3xl font-bold leading-tight sm:text-4xl">
             What we&apos;re building toward
           </h2>
         </Reveal>
         <div className="grid gap-5 md:grid-cols-2">
           {goals.map((g, i) => (
             <Reveal key={g.title} delay={i * 0.06}>
-              <div className="flex h-full gap-4 rounded-2xl border border-white/10 bg-white/5 p-6">
+              <div className="flex h-full gap-4 rounded-lg border border-white/10 bg-white/5 p-6">
                 <g.icon size={28} weight="duotone" className="mt-1 shrink-0 text-accent" />
                 <div>
                   <h3 className="text-lg font-bold">{g.title}</h3>

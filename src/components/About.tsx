@@ -11,7 +11,7 @@ export default function About() {
     <section id="about" className="bg-navy py-24 text-white">
       <div className="mx-auto grid max-w-6xl gap-12 px-6 md:grid-cols-[0.9fr_1.1fr] md:items-start">
         <Reveal>
-          <h2 className="text-3xl font-black leading-tight sm:text-4xl">
+          <h2 className="text-3xl font-bold leading-tight sm:text-4xl">
             A global hackathon, built for Ogbomoso
           </h2>
           <p className="mt-5 max-w-md text-white/70 leading-relaxed">
@@ -24,7 +24,7 @@ export default function About() {
           {points.map((p, i) => (
             <Reveal key={p} delay={i * 0.08}>
               <div className="flex gap-4 border-t border-white/10 pt-6">
-                <span className="text-2xl font-black text-accent">
+                <span className="text-2xl font-bold text-accent">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <p className="text-white/80 leading-relaxed">{p}</p>

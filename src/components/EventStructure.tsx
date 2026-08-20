@@ -28,11 +28,11 @@ export default function EventStructure() {
   return (
     <section id="schedule" className="bg-navy py-24 text-white">
       <div className="mx-auto max-w-4xl px-6">
-        <p className="text-sm font-bold uppercase tracking-widest text-accent">
+        <p className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-accent">
           Two Days, Start to Finish
         </p>
         <Reveal>
-          <h2 className="mt-2 mb-14 text-3xl font-black sm:text-4xl">Event Structure</h2>
+          <h2 className="mt-2 mb-14 text-3xl font-bold sm:text-4xl">Event Structure</h2>
         </Reveal>
         <div className="relative">
           <div className="absolute left-6 top-2 bottom-2 hidden w-px bg-white/10 sm:block" />

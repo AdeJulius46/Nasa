@@ -5,7 +5,7 @@ export default function Story() {
     <section className="bg-deep-blue py-24 text-white">
       <div className="mx-auto max-w-3xl px-6">
         <Reveal>
-          <h2 className="text-3xl font-black sm:text-4xl">Why Ogbomoso, why now</h2>
+          <h2 className="text-3xl font-bold sm:text-4xl">Why Ogbomoso, why now</h2>
         </Reveal>
         <Reveal delay={0.08} className="mt-6 space-y-5 text-white/80 leading-relaxed">
           <p>

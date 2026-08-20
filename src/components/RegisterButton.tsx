@@ -20,7 +20,7 @@ export default function RegisterButton({
       href={REGISTER_URL}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full bg-accent font-bold text-navy transition-all hover:scale-105 hover:shadow-[0_0_30px_2px_rgba(234,254,7,0.4)] active:scale-[0.97] ${sizes[size]} ${className}`}
+      className={`inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full border border-accent bg-accent font-bold tracking-tight text-navy transition-all hover:bg-transparent hover:text-accent active:scale-[0.97] ${sizes[size]} ${className}`}
     >
       Register Now
       <ArrowRight weight="bold" className="h-4 w-4" />

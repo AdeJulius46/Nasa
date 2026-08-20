@@ -12,17 +12,19 @@ const links = [
 export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-navy/90 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
         <Link href="#top" className="flex items-center gap-2 text-white">
-          <span className="text-xs font-bold tracking-widest text-accent">NASA</span>
-          <span className="text-sm font-extrabold tracking-wide">SPACE APPS · OGBOMOSO</span>
+          <span className="font-mono text-[11px] font-medium uppercase tracking-[0.15em] text-accent">
+            NASA
+          </span>
+          <span className="text-sm font-bold tracking-tight">SPACE APPS · OGBOMOSO</span>
         </Link>
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-2 md:flex">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="text-sm font-medium text-white/70 transition-colors hover:text-white"
+              className="rounded-full border border-white/15 px-4 py-1.5 font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-white/70 transition-colors hover:border-accent/50 hover:text-accent"
             >
               {l.label}
             </a>

@@ -24,13 +24,13 @@ export default function Team() {
     <section id="team" className="bg-deep-blue py-24 text-white">
       <div className="mx-auto max-w-6xl px-6">
         <Reveal>
-          <h2 className="mb-12 text-3xl font-black sm:text-4xl">Meet the Team</h2>
+          <h2 className="mb-12 text-3xl font-bold sm:text-4xl">Meet the Team</h2>
         </Reveal>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
           {team.map((m, i) => (
             <Reveal key={m.name} delay={i * 0.05}>
-              <div className="flex flex-col items-center rounded-2xl border border-white/10 bg-white/5 p-6 text-center">
-                <div className="flex h-20 w-20 items-center justify-center rounded-full border-2 border-accent bg-navy text-xl font-black text-accent">
+              <div className="flex flex-col items-center rounded-lg border border-white/10 bg-white/5 p-6 text-center">
+                <div className="flex h-20 w-20 items-center justify-center rounded-full border-2 border-accent bg-navy text-xl font-bold text-accent">
                   {initials(m.name)}
                 </div>
                 <h3 className="mt-4 font-bold text-accent">{m.name}</h3>

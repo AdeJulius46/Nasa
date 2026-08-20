@@ -57,9 +57,11 @@ export default function Sponsorship() {
   return (
     <section id="sponsors" className="bg-navy py-24 text-white">
       <div className="mx-auto max-w-6xl px-6">
-        <p className="text-sm font-bold uppercase tracking-widest text-accent">Partner With Us</p>
+        <p className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-accent">
+          Partner With Us
+        </p>
         <Reveal>
-          <h2 className="mt-2 mb-4 text-3xl font-black sm:text-4xl">Sponsorship Tiers</h2>
+          <h2 className="mt-2 mb-4 text-3xl font-bold sm:text-4xl">Sponsorship Tiers</h2>
         </Reveal>
         <p className="mb-12 max-w-xl text-white/70">
           Help bring a global innovation platform to Ogbomoso. Choose the
@@ -69,16 +71,16 @@ export default function Sponsorship() {
           {tiers.map((t, i) => (
             <Reveal key={t.name} delay={i * 0.06}>
               <div
-                className={`flex h-full flex-col rounded-2xl border p-7 ${
+                className={`flex h-full flex-col rounded-lg border p-7 ${
                   t.highlight
-                    ? "border-accent/50 bg-white/[0.07] shadow-xl shadow-black/20 lg:-translate-y-3"
+                    ? "border-accent/50 bg-white/[0.07] lg:-translate-y-3"
                     : "border-white/10 bg-white/[0.03]"
                 }`}
               >
                 <h3 className="text-lg font-bold uppercase tracking-wide text-accent">
                   {t.name}
                 </h3>
-                <p className="mt-1 text-3xl font-black">{t.price}</p>
+                <p className="mt-1 text-3xl font-bold">{t.price}</p>
                 <ul className="mt-6 flex-1 space-y-3 text-sm leading-relaxed text-white/75">
                   {t.benefits.map((b) => (
                     <li key={b} className="flex gap-2">

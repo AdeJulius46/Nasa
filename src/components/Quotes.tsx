@@ -17,7 +17,7 @@ export default function Quotes() {
       <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-2">
         {quotes.map((q, i) => (
           <Reveal key={q.author} delay={i * 0.08}>
-            <blockquote className="h-full rounded-2xl border-l-4 border-accent bg-white/5 p-8">
+            <blockquote className="h-full rounded-lg border-l-4 border-accent bg-white/5 p-8">
               <p className="text-xl leading-relaxed">
                 <span className="text-accent">&ldquo;</span>
                 {q.text}

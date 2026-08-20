@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="bg-navy py-20 text-white">
       <div className="mx-auto flex max-w-6xl flex-col items-start gap-8 px-6 md:flex-row md:items-center md:justify-between">
         <div>
-          <p className="text-2xl font-black">Ready to build something out of this world?</p>
+          <p className="text-2xl font-bold">Ready to build something out of this world?</p>
           <p className="mt-2 text-white/70">{EVENT.website}</p>
         </div>
         <RegisterButton size="lg" />

@@ -32,14 +32,14 @@ export default function Budget() {
     <section className="bg-deep-blue py-24 text-white">
       <div className="mx-auto max-w-6xl px-6">
         <Reveal>
-          <h2 className="max-w-lg text-3xl font-black leading-tight sm:text-4xl">
+          <h2 className="max-w-lg text-3xl font-bold leading-tight sm:text-4xl">
             How ₦5 million creates the experience
           </h2>
         </Reveal>
         <div className="mt-14 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
           {slices.map((s, i) => (
             <Reveal key={s.title} delay={i * 0.06} className="border-t border-white/10 pt-6">
-              <p className="text-4xl font-black text-accent">{s.pct}</p>
+              <p className="text-4xl font-bold text-accent">{s.pct}</p>
               <h3 className="mt-3 text-sm font-bold uppercase tracking-wide text-white">
                 {s.title}
               </h3>

@@ -29,13 +29,13 @@ export default function Hero() {
         <div className="flex flex-col items-start">
           <motion.div
             {...rise(0)}
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-accent"
+            className="mb-7 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-accent"
           >
             NASA International Space Apps Challenge
           </motion.div>
           <motion.h1
             {...rise(0.08)}
-            className="max-w-xl text-4xl font-black leading-[1.05] text-white sm:text-5xl"
+            className="max-w-xl text-5xl font-bold leading-[0.95] tracking-tight text-white sm:text-6xl"
           >
             Bringing Global Innovation to Ogbomoso
           </motion.h1>
@@ -47,7 +47,7 @@ export default function Hero() {
             <RegisterButton size="lg" />
             <a
               href="#schedule"
-              className="text-sm font-semibold text-white/70 underline underline-offset-4 hover:text-white"
+              className="rounded-full border border-white/15 px-5 py-2 font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-white/70 transition-colors hover:border-accent/50 hover:text-accent"
             >
               See the schedule
             </a>

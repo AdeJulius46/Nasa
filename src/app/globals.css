@@ -6,6 +6,7 @@
   --navy: #050d2b;
   --deep-blue: #0b1f5c;
   --blue: #0b3fae;
+  --abyss: #02061a;
   --accent: #eafe07;
 }
 
@@ -15,9 +16,10 @@
   --color-navy: var(--navy);
   --color-deep-blue: var(--deep-blue);
   --color-blue: var(--blue);
+  --color-abyss: var(--abyss);
   --color-accent: var(--accent);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-display);
+  --font-mono: var(--font-label);
 }
 
 body {
@@ -34,4 +36,14 @@ html {
   html {
     scroll-behavior: auto;
   }
+}
+
+h1, h2, h3 {
+  letter-spacing: -0.02em;
+}
+
+.dotted-divider {
+  border: none;
+  border-top: 1px dotted rgba(234, 254, 7, 0.35);
+  height: 0;
 }
