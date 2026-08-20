@@ -2,7 +2,7 @@
 
 import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
-import { Stars } from "@react-three/drei";
+import { Stars, Environment, Bounds } from "@react-three/drei";
 import { useReducedMotion } from "motion/react";
 import AstronautModel from "./AstronautModel";
 
@@ -20,15 +20,18 @@ export default function AstronautScene() {
 
   return (
     <Canvas
-      camera={{ position: [0, 0, 4.2], fov: 32 }}
+      camera={{ position: [0, 0, 5], fov: 35 }}
       dpr={[1, 1.5]}
       gl={{ antialias: true, alpha: true }}
     >
-      <ambientLight intensity={0.7} />
-      <directionalLight position={[3, 4, 2]} intensity={1.4} />
+      <ambientLight intensity={0.5} />
+      <directionalLight position={[3, 4, 2]} intensity={1.2} />
       <pointLight position={[-3, -1, -2]} intensity={8} color="#eafe07" />
       <Suspense fallback={<LoadingPlaceholder />}>
-        <AstronautModel reduceMotion={reduce} />
+        <Environment preset="night" />
+        <Bounds fit clip margin={1.3}>
+          <AstronautModel reduceMotion={reduce} />
+        </Bounds>
         <Stars
           radius={40}
           depth={20}
