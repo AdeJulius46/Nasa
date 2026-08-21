@@ -60,7 +60,7 @@ export default function Hero() {
 
         <motion.div
           {...rise(0.2)}
-          className="relative mx-auto aspect-[3/4] w-full max-w-[260px] sm:max-w-xs md:max-w-lg"
+          className=" hidden  relative mx-auto aspect-[3/4] w-full max-w-[260px]  md:block md:max-w-lg"
         >
           <SceneErrorBoundary fallback={<OrbitFallback />}>
             <AstronautScene />

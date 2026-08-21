@@ -14,7 +14,7 @@ export default function Footer() {
         <RegisterButton size="lg" />
       </div>
       <div className="mx-auto mt-12 flex max-w-6xl items-center justify-between border-t border-white/10 px-6 pt-8">
-        <SpaceAppsLogo className="text-white" />
+        <SpaceAppsLogo className="sm:h-12" />
       </div>
       <div className="mx-auto mt-6 flex max-w-6xl flex-wrap gap-x-6 gap-y-2 px-6 text-sm text-white/60">
         {EVENT.social.map((s) => (

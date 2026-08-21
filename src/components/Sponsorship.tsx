@@ -1,5 +1,6 @@
-import { Check } from "@phosphor-icons/react/dist/ssr";
+import { Check, EnvelopeSimple } from "@phosphor-icons/react/dist/ssr";
 import Reveal from "./Reveal";
+import { SPONSOR_EMAIL } from "@/lib/config";
 
 const tiers = [
   {
@@ -63,10 +64,17 @@ export default function Sponsorship() {
         <Reveal>
           <h2 className="mt-2 mb-4 text-3xl font-bold sm:text-4xl">Sponsorship Tiers</h2>
         </Reveal>
-        <p className="mb-12 max-w-xl text-white/70">
+        <p className="max-w-xl text-white/70">
           Help bring a global innovation platform to Ogbomoso. Choose the
           tier that fits your organization.
         </p>
+        <a
+          href={`mailto:${SPONSOR_EMAIL}?subject=Sponsoring%20NASA%20Space%20Apps%20Ogbomoso`}
+          className="mt-6 mb-12 inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-accent bg-accent px-6 py-3 font-bold tracking-tight text-navy transition-all hover:bg-transparent hover:text-accent active:scale-[0.97]"
+        >
+          Become a Sponsor
+          <EnvelopeSimple weight="bold" className="h-4 w-4" />
+        </a>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {tiers.map((t, i) => (
             <Reveal key={t.name} delay={i * 0.06}>

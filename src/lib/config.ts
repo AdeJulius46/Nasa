@@ -1,6 +1,9 @@
 // TODO: replace with the real local registration link (event page or form) when available.
 export const REGISTER_URL = "https://www.spaceappschallenge.org/";
 
+// TODO: replace with the real sponsorship contact email.
+export const SPONSOR_EMAIL = "sponsors@spaceappsogbomoso.org";
+
 export const EVENT = {
   name: "NASA Space Apps Challenge Ogbomoso",
   tagline: "Bringing Global Innovation to Ogbomoso",

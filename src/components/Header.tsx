@@ -15,13 +15,8 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-navy/90 backdrop-blur">
       <div className="relative mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2 sm:px-6">
-        <Link href="#top" className="flex shrink-0 items-center gap-2 text-white">
-          <div className="scale-[0.78] origin-left sm:scale-100">
-            <SpaceAppsLogo className="text-white" />
-          </div>
-          <span className="hidden font-mono text-[10px] uppercase tracking-[0.15em] text-white/50 sm:inline">
-            Ogbomoso
-          </span>
+        <Link href="#top" className="flex shrink-0 items-center">
+          <SpaceAppsLogo />
         </Link>
         <nav className="hidden items-center gap-2 md:flex">
           {links.map((l) => (
